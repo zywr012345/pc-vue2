@@ -1,0 +1,36 @@
+// 通用 主题色
+$main: #3f8cf4;
+
+$grey6: #666666;
+$grey11: #eeeeee;
+$grey25: #b5b5b5;
+$grey65: #313133;
+
+$black: #000000;
+$white: #ffffff;
+
+$transparent: rgba(0, 0, 0, 0);
+
+$mask: rgba(0, 0, 0, 0.5);
+
+$wechat: #00c901;
+$alipay: #1296db;
+
+$company1: #00afec;
+$company2: #abcd03;
+
+/* stylelint-disable */
+:export {
+  main: $main;
+  grey6: $grey6;
+  grey11: $grey11;
+  grey25: $grey25;
+  grey65: $grey65;
+  black: $black;
+  white: $white;
+  transparent: $transparent;
+  mask: $mask;
+  wechat: $wechat;
+  alipay: $alipay;
+};
+/* stylelint-enable */

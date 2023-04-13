@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>">
+    <title></title>
+    <script type="text/javascript">
+      function getUrlVariable(title) {
+        var titleRegExp = new RegExp('(^|&)' + title + '=([^&]*)(&|$)');
+        var r = window.location.search.substr(1).match(titleRegExp);
+        if (r) return unescape(r[2]);
+      }
+      function empty(variable) {
+        if (typeof variable === 'undefined') {
+          return true;
+        }
+        if (typeof variable === 'string') {
+          var verify = false;
+          if (variable === 'undefined' || variable === 'null') {
+            verify = true;
+          }
+          else {
+            verify = variable.replace(/(^[ \t\n\r]*)|([ \t\n\r]*$)/g, '').length === 0;
+          }
+          return verify;
+        }
+        if (typeof variable === 'boolean') {
+          return !variable;
+        }
+        if (typeof variable === 'number') {
+          return variable === 0 || isNaN(variable);
+        }
+        if (typeof variable === 'object') {
+          if (variable === null || variable.length === 0) {
+            return true;
+          }
+          for (var i in variable) {
+            return false;
+          }
+          return true;
+        }
+        return false;
+      }
+      var Id = getUrlVariable('id');
+      if (!empty(Id)) {
+        window.localStorage.setItem('HospitalId', JSON.stringify(Id));
+      }
+      var Platform = getUrlVariable('platform');
+      if (!empty(Platform)) {
+        window.localStorage.setItem('PlatformType', JSON.stringify(Platform));
+      }
+      var Project = getUrlVariable('project');
+      if (!empty(Project)) {
+        window.localStorage.setItem('ProjectType', JSON.stringify(Project));
+      }
+      /*
+      * 直接进入功能页时登录回调信息处理
+      * CurrentTrajectory：为登录成功后的回调页面，如此值为空，则直接跳转回项目首页
+      * */
+      if (!empty(getUrlVariable('target'))) {
+        // TODO
+        if (getUrlVariable('target') === '') {
+          window.localStorage.setItem('CurrentTrajectory', JSON.stringify(''));
+        }
+      }
+      function initial() {
+        document.write('<div id="app">' +
+          '<div class="loading-page">' +
+          '<div class="loading-region">' +
+          '<div class="loading-blank">' +
+          '<div class="loading-circle-first"></div><div class="loading-circle-secondary"></div>' +
+          '</div>' +
+          '</div>' +
+          '</div>' +
+          '</div>');
+      }
+      initial();
+    </script>
+    <style type="text/css">
+      body {
+        padding: 0;
+        margin: 0;
+      }
+
+      .loading-page {
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+      }
+
+      @keyframes loading-circle-flash {
+        0% {
+          transform: rotate(0);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes loading-circle-flash-infinite {
+        0% {
+          transform: rotate(0);
+        }
+
+        100% {
+          transform: rotate(-360deg);
+        }
+      }
+
+      .loading-region {
+        width: 40px;
+        height: 40px;
+        margin-top: -40px;
+        margin-left: -20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+      }
+
+      .loading-blank {
+        width: 40px;
+        height: 40px;
+        position: relative;
+      }
+
+      .loading-circle-first {
+        animation: loading-circle-flash 1.1s linear infinite;
+        width: 40px;
+        height: 40px;
+        border: 4px solid rgba(0, 0, 0, 0);
+        border-top-color: #00afec;
+        border-bottom-color: #00afec;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+
+      .loading-circle-secondary {
+        animation: loading-circle-flash-infinite 2s linear infinite;
+        width: 28px;
+        height: 28px;
+        border: 4px solid rgba(0, 0, 0, 0);
+        border-right-color: #abcd03;
+        border-left-color: #abcd03;
+        border-radius: 50%;
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        bottom: 6px;
+        left: 6px;
+      }
+    </style>
+</head>
+<body></body>
+</html>
