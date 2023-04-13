@@ -18,6 +18,11 @@ import store from './common/store';
 // 阿里巴巴字体图标库
 import '../static/iconfont/iconfont.css';
 
+// 轮播
+import wcSwiper from './components/wc-swiper/index.js';
+import './components/wc-swiper/style.css';
+Vue.use(wcSwiper.default);
+
 Vue.use(ElementUI);
 
 Vue.use(DataView);

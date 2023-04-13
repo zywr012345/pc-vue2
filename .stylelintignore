@@ -1,3 +1,4 @@
 dist
 docker
 static
+src/components/wc-swiper

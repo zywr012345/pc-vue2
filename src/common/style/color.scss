@@ -1,17 +1,61 @@
 // 通用 主题色
 $main: #3f8cf4;
 
+$grey3: #4e6594;// 首页 底部入口单项背景
 $grey6: #666666;
 $grey11: #eeeeee;
 $grey25: #b5b5b5;
 $grey65: #313133;
 
+$blue1: #162536; // 轮播 底部切换模块背景色
+$blue2: #3c4859; // 轮播 底部切换模块 单项背景色
+$blue3: #0898f7; // 轮播 底部切换模块-选中状态 单项背景色
+$blue4: #025dea; // 轮播 底部切换模块-选中状态 单项背景色
+$blue6: #2372f1; // 公司介绍-背景色
+$blue7: #072552; //团队介绍-背景色
+$blue8: #0d1d36;
+$blue9: #0790f5; // 公司战略
+$blue10: #078ef2; // 边框
+$blue11: #002493; // P2 地图
+$blue12: #00259b; // P2 地图
+$blue13: #d5dfff;
+
+$orange: #ffcc80; // P2 经典案例+战略合作伙伴
+
+$green1: #00ffd8; // P2 地图
+
+$bgColor: rgba(44, 74, 131, 0.5); // 首页
+
+$blue5: #4de9ff; // 发展历程-线条
+
 $black: #000000;
+$black1: #040c19;
+$black2: #091226; // 公司战略 背景色
+$black3: rgba(90, 96, 110, 0); // 公司战略 背景色
+
 $white: #ffffff;
+$white1: rgba(255, 255, 255, 0.85); // 公司介绍-备注
+$white2: #e2f9ff; // P2 地图文字
 
 $transparent: rgba(0, 0, 0, 0);
+$border: rgba(255, 255, 255, 0.36); // 首页 底部入口背景
+$border1: rgba(255, 255, 255, 0.5); // 公司战略
+
+$lineargradient1: linear-gradient(180deg, $blue5 0%, rgba(255, 255, 255, 0) 100%);
+$lineargradient2: linear-gradient(360deg, $blue5 0%, rgba(255, 255, 255, 0) 100%);
+$lineargradient3: linear-gradient(134deg, $blue6 0%, rgba(0, 77, 203, 0) 100%); // 公司介绍
+$lineargradient4: linear-gradient(124deg, $blue7 0%, rgba(7, 41, 87, 0.84) 53%, rgba(5, 62, 114, 0) 100%); // 团队介绍-背景色
+$lineargradient5: linear-gradient(136deg, $black1 0%, $blue8 100%); // 公司战略
+$lineargradient6: linear-gradient(134deg, #2372f1 0%, #081242 100%); // 公司介绍
+$lineargradient7: linear-gradient(180deg, #00e2ff 0%, #004eff 100%); // P2 地图
+$lineargradient8: linear-gradient(134deg, #002767 0%, rgba(0, 77, 203, 0) 100%); // P2 医联山东
+$lineargradient9: linear-gradient(180deg, #2f5fa8 0%, #053e72 100%); // P2 医联山东
+$lineargradient10: linear-gradient(180deg, #003bef 0%, rgba(0, 30, 120, 0.36) 100%); // P2 科研机构
 
 $mask: rgba(0, 0, 0, 0.5);
+$mask1: rgba(0, 0, 0, 0.8);
+
+$boxshadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
 
 $wechat: #00c901;
 $alipay: #1296db;
@@ -32,5 +76,9 @@ $company2: #abcd03;
   mask: $mask;
   wechat: $wechat;
   alipay: $alipay;
+  white2: $white2;
+  blue12: $blue12;
+  blue13: $blue13;
+  green1: $green1;
 };
 /* stylelint-enable */
